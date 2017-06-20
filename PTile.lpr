@@ -1,6 +1,7 @@
 program PTile;
 
 {$mode objfpc}{$H+}
+{$calling stdcall}
 
 uses
   Classes, Windows;
@@ -12,7 +13,7 @@ type
     Event: DWORD;
     HWnd: HWND;
     IDObject, IDChild: LONG;
-    EventThread, EventTime: DWORD); cdecl;
+    EventThread, EventTime: DWORD);
 
 const
   WINEVENT_OUTOFCONTEXT = $0000;
@@ -24,17 +25,17 @@ function SetWinEventHook(
   HMod: HMODULE;
   EventProc: WINEVENTPROC;
   IDProcess, IDThread: DWORD;
-  Flags: UINT): HWINEVENTHOOK; cdecl; external 'User32.dll';
+  Flags: UINT): HWINEVENTHOOK; external 'User32.dll';
 
 function UnhookWinEvent(
-  EventHook: HWINEVENTHOOK): boolean; cdecl; external 'User32.dll';
+  EventHook: HWINEVENTHOOK): LongBool; external 'User32.dll';
 
 procedure WinEventCallback(
   EventHook: HWINEVENTHOOK;
   Event: DWORD;
   HWnd: HWND;
   IDObject, IDChild: LONG;
-  EventThread, EventTime: DWORD); cdecl;
+  EventThread, EventTime: DWORD);
 begin
   WriteLn('.');
 end;
