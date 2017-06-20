@@ -15,7 +15,7 @@ type
     Event: DWORD;
     HWnd: HWND;
     IDObject, IDChild: LONG;
-    EventThread, EventTime: DWORD);
+    EventThread, EventTime: DWORD); cdecl;
 
 const
   EVENT_OBJECT_CREATE  = $8000;
@@ -36,7 +36,7 @@ procedure WinEventCallback(
   Event: DWORD;
   HWnd: HWND;
   IDObject, IDChild: LONG;
-  EventThread, EventTime: DWORD);
+  EventThread, EventTime: DWORD); cdecl;
 begin
   WriteLn('.');
 end;
