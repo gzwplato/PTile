@@ -13,15 +13,32 @@
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="10" Y="13"/>
-        <UsageCount Value="20"/>
+        <CursorPos X="33" Y="17"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit0>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="0" HistoryIndex="-1"/>
+    <JumpHistory Count="4" HistoryIndex="3">
+      <Position1>
+        <Filename Value="PTile.lpr"/>
+        <Caret Line="12" Column="1" TopLine="1"/>
+      </Position1>
+      <Position2>
+        <Filename Value="PTile.lpr"/>
+        <Caret Line="13" Column="7" TopLine="1"/>
+      </Position2>
+      <Position3>
+        <Filename Value="PTile.lpr"/>
+        <Caret Line="11" Column="30" TopLine="1"/>
+      </Position3>
+      <Position4>
+        <Filename Value="PTile.lpr"/>
+        <Caret Line="16" Column="25" TopLine="2"/>
+      </Position4>
+    </JumpHistory>
   </ProjectSession>
   <EditorMacros Count="0"/>
 </CONFIG>
