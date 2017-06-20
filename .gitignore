@@ -1,0 +1,9 @@
+*
+
+# Allow project files, Git, build system, and source.
+!.gitignore
+!README.md
+!LICENSE.md
+!*.lpi
+!*.lpr
+!*.lps
