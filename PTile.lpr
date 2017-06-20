@@ -15,8 +15,9 @@ type
     EventThread, EventTime: DWORD); cdecl;
 
 const
-  EVENT_OBJECT_CREATE  = $8000;
-  EVENT_OBJECT_DESTROY = $8001;
+  WINEVENT_OUTOFCONTEXT = $0000;
+  EVENT_OBJECT_CREATE   = $8000;
+  EVENT_OBJECT_DESTROY  = $8001;
 
 function SetWinEventHook(
   EventMin, EventMax: UINT;
@@ -42,7 +43,7 @@ var
   EventHook: HWINEVENTHOOK;
 begin
   EventHook := SetWinEventHook(EVENT_OBJECT_CREATE, EVENT_OBJECT_DESTROY, 0,
-    @WinEventCallback, 0, 0, 0);
+    @WinEventCallback, 0, 0, WINEVENT_OUTOFCONTEXT);
 
   ReadLn;
 
