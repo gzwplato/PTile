@@ -91,10 +91,9 @@ begin
   UninstallHooks := TUninstallProcedure(GetProcAddress(LibHookProc, 'UninstallHooks'));
 
   InstallHooks;
-
   ReadLn;
-
   UninstallHooks;
+
   {
   Message := Default(TMsg);
   EventHook := SetWinEventHook(EVENT_OBJECT_CREATE, EVENT_OBJECT_DESTROY, 0,
