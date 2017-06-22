@@ -30,35 +30,35 @@ function SetWinEventHook(
 function UnhookWinEvent(
   EventHook: HWINEVENTHOOK): LongBool; external 'User32.dll';
 
-function EnumWindowsCallback(
-  HWnd: HWND;
-  LParam: LPARAM): LongBool;
+function {%H-}EnumWindowsCallback(
+  {%H-}HWnd: HWND;
+  {%H-}LParam: LPARAM): LongBool;
 begin
   Result := True;
   WriteLn('.');
 end;
 
 procedure WinEventCallback(
-  EventHook: HWINEVENTHOOK;
-  Event: DWORD;
-  HWnd: HWND;
-  IDObject, IDChild: LONG;
-  EventThread, EventTime: DWORD);
+  {%H-}EventHook: HWINEVENTHOOK;
+  {%H-}Event: DWORD;
+  {%H-}HWnd: HWND;
+  {%H-}IDObject, {%H-}IDChild: LONG;
+  {%H-}EventThread, {%H-}EventTime: DWORD);
 begin
   WriteLn('.');
 end;
 
 var
-  Msg: TMsg;
+  Message: TMsg;
   EventHook: HWINEVENTHOOK;
 begin
-  //EnumWindows(@EnumWindowsCallback, 0);
+  Message := Default(TMsg);
   EventHook := SetWinEventHook(EVENT_OBJECT_CREATE, EVENT_OBJECT_DESTROY, 0,
     @WinEventCallback, 0, 0, WINEVENT_OUTOFCONTEXT);
 
-  while GetMessage(Msg, 0, 0, 0) do
+  while GetMessage(Message, 0, 0, 0) do
   begin
-    DispatchMessage(Msg);
+    DispatchMessage(Message);
   end;
 
   if EventHook <> 0 then
