@@ -7,3 +7,8 @@
 !*.lpi
 !*.lpr
 !*.lps
+
+!LibHookProc/
+!LibHookProc/*.lpi
+!LibHookProc/*.lpr
+!LibHookProc/*.lps
