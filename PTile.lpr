@@ -87,8 +87,8 @@ begin
   if LibHookProc = 0 then
     exit;
 
-  InstallHooks := GetProcAddress(LibHookProc, 'InstallHooks');
-  UninstallHooks := GetProcAddress(LibHookProc, 'UninstallHooks');
+  InstallHooks := TInstallProcedure(GetProcAddress(LibHookProc, 'InstallHooks'));
+  UninstallHooks := TUninstallProcedure(GetProcAddress(LibHookProc, 'UninstallHooks'));
 
   InstallHooks;
 
