@@ -11,5 +11,4 @@ A tiling "window manager" for Windows.
 
 ### SetWinEventHook
 
-* Callback does not fire - does the program need to import the LCL or otherwise
-make itself a GUI program?
+* Why do some windows not count as new objects?
