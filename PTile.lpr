@@ -7,6 +7,7 @@ uses
   Classes, Windows;
 
 type
+  HINSTANCE = HANDLE;
   HWINEVENTHOOK = HANDLE;
   WINEVENTPROC = procedure(
     EventHook: HWINEVENTHOOK;
@@ -74,9 +75,12 @@ begin
 end;
 
 var
-  Message: TMsg;
-  EventHook: HWINEVENTHOOK;
+  {%H-}Message: TMsg;
+  {%H-}EventHook: HWINEVENTHOOK;
+  LibHookProc: HINSTANCE;
 begin
+
+  {
   Message := Default(TMsg);
   EventHook := SetWinEventHook(EVENT_OBJECT_CREATE, EVENT_OBJECT_DESTROY, 0,
     @WinEventCallback, 0, 0, WINEVENT_OUTOFCONTEXT);
@@ -86,5 +90,6 @@ begin
 
   if EventHook <> 0 then
     UnhookWinEvent(EventHook);
+  }
 end.
 
