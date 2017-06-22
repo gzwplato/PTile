@@ -91,6 +91,9 @@ begin
   UninstallHooks := GetProcAddress(LibHookProc, 'UninstallHooks');
 
   InstallHooks;
+
+  ReadLn;
+
   UninstallHooks;
   {
   Message := Default(TMsg);
