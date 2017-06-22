@@ -47,12 +47,21 @@ procedure WinEventCallback(
   {%H-}IDObject, {%H-}IDChild: LONG;
   {%H-}EventThread, {%H-}EventTime: DWORD);
 var
+  Len: LongInt;
+  Title: array of WideChar;
   LStyle: LONG;
 begin
   if not ((Event = EVENT_OBJECT_CREATE) and
           (IDObject = OBJID_WINDOW) and
           (IDChild = INDEXID_CONTAINER)) then
     exit;
+
+  Len := GetWindowTextLengthW(HWnd) + 1;
+  if Len - 1 = 0 then
+    exit;
+
+  SetLength(Title, Len);
+  GetWindowTextW(HWnd, @Title[0], Len);
 
   LStyle := GetWindowLong(HWnd, GWL_STYLE);
   if LStyle = 0 then
@@ -61,7 +70,7 @@ begin
   if (LStyle and WS_BORDER) <> WS_BORDER then
     exit;
 
-  WriteLn('.');
+  WriteLn(WideCharToString(@Title[0]));
 end;
 
 var
@@ -73,9 +82,7 @@ begin
     @WinEventCallback, 0, 0, WINEVENT_OUTOFCONTEXT);
 
   while GetMessage(Message, 0, 0, 0) do
-  begin
     DispatchMessage(Message);
-  end;
 
   if EventHook <> 0 then
     UnhookWinEvent(EventHook);
