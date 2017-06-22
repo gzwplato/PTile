@@ -15,6 +15,8 @@ type
     HWnd: HWND;
     IDObject, IDChild: LONG;
     EventThread, EventTime: DWORD);
+  TInstallProcedure = procedure;
+  TUninstallProcedure = procedure;
 
 const
   WINEVENT_OUTOFCONTEXT = $0000;
@@ -78,8 +80,18 @@ var
   {%H-}Message: TMsg;
   {%H-}EventHook: HWINEVENTHOOK;
   LibHookProc: HINSTANCE;
+  InstallHooks: TInstallProcedure;
+  UninstallHooks: TUninstallProcedure;
 begin
+  LibHookProc := LoadLibrary('LibHookProc/LibHookProc.dll');
+  if LibHookProc = 0 then
+    exit;
 
+  InstallHooks := GetProcAddress(LibHookProc, 'InstallHooks');
+  UninstallHooks := GetProcAddress(LibHookProc, 'UninstallHooks');
+
+  InstallHooks;
+  UninstallHooks;
   {
   Message := Default(TMsg);
   EventHook := SetWinEventHook(EVENT_OBJECT_CREATE, EVENT_OBJECT_DESTROY, 0,
