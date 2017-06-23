@@ -12,3 +12,5 @@ A tiling "window manager" for Windows.
 ### SetWinEventHook
 
 * Why do some windows not count as new objects?
+* The string "XCP" appeared as a window title after right-clicking on Firefox in
+the start menu to open a new window.

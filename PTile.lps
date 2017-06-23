@@ -9,89 +9,75 @@
         <Filename Value="PTile.lpr"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="62"/>
-        <CursorPos X="3" Y="80"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="74"/>
+        <CursorPos X="4" Y="81"/>
         <UsageCount Value="87"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="README.md"/>
-        <EditorIndex Value="1"/>
+        <WindowIndex Value="1"/>
         <CursorPos X="48" Y="14"/>
         <UsageCount Value="43"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit1>
     </Units>
-    <JumpHistory Count="17" HistoryIndex="16">
+    <JumpHistory Count="13" HistoryIndex="12">
       <Position1>
         <Filename Value="PTile.lpr"/>
-        <Caret Line="12"/>
+        <Caret Line="16" Column="25" TopLine="2"/>
       </Position1>
       <Position2>
         <Filename Value="PTile.lpr"/>
-        <Caret Line="13" Column="7"/>
+        <Caret Line="37" Column="6" TopLine="10"/>
       </Position2>
       <Position3>
         <Filename Value="PTile.lpr"/>
-        <Caret Line="11" Column="30"/>
+        <Caret Line="18" Column="5" TopLine="10"/>
       </Position3>
       <Position4>
         <Filename Value="PTile.lpr"/>
-        <Caret Line="16" Column="25" TopLine="2"/>
+        <Caret Line="42" Column="25" TopLine="15"/>
       </Position4>
       <Position5>
         <Filename Value="PTile.lpr"/>
-        <Caret Line="17" Column="27"/>
+        <Caret Line="32" Column="68" TopLine="18"/>
       </Position5>
       <Position6>
         <Filename Value="PTile.lpr"/>
-        <Caret Line="37" Column="6" TopLine="10"/>
+        <Caret Line="31" Column="25" TopLine="17"/>
       </Position6>
       <Position7>
         <Filename Value="PTile.lpr"/>
-        <Caret Line="18" Column="5" TopLine="10"/>
+        <Caret Line="48" Column="13" TopLine="31"/>
       </Position7>
       <Position8>
         <Filename Value="PTile.lpr"/>
-        <Caret Line="42" Column="25" TopLine="15"/>
+        <Caret Line="55" Column="17" TopLine="39"/>
       </Position8>
       <Position9>
         <Filename Value="PTile.lpr"/>
-        <Caret Line="32" Column="68" TopLine="18"/>
+        <Caret Line="52" Column="38" TopLine="37"/>
       </Position9>
       <Position10>
         <Filename Value="PTile.lpr"/>
-        <Caret Line="31" Column="25" TopLine="17"/>
+        <Caret Line="51" Column="15" TopLine="45"/>
       </Position10>
       <Position11>
         <Filename Value="PTile.lpr"/>
-        <Caret Line="48" Column="13" TopLine="31"/>
+        <Caret Line="66" Column="73" TopLine="52"/>
       </Position11>
       <Position12>
         <Filename Value="PTile.lpr"/>
-        <Caret Line="55" Column="17" TopLine="39"/>
+        <Caret Line="73" Column="33" TopLine="47"/>
       </Position12>
       <Position13>
         <Filename Value="PTile.lpr"/>
-        <Caret Line="52" Column="38" TopLine="37"/>
-      </Position13>
-      <Position14>
-        <Filename Value="PTile.lpr"/>
-        <Caret Line="51" Column="15" TopLine="45"/>
-      </Position14>
-      <Position15>
-        <Filename Value="PTile.lpr"/>
-        <Caret Line="66" Column="73" TopLine="52"/>
-      </Position15>
-      <Position16>
-        <Filename Value="PTile.lpr"/>
-        <Caret Line="73" Column="33" TopLine="47"/>
-      </Position16>
-      <Position17>
-        <Filename Value="PTile.lpr"/>
         <Caret Line="72" Column="21" TopLine="47"/>
-      </Position17>
+      </Position13>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>
