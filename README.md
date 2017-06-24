@@ -12,5 +12,7 @@ A tiling "window manager" for Windows.
 ### SetWinEventHook
 
 * Why do some windows not count as new objects?
+  * Removing the check for the top-level window style shows the creation of many
+  form elements, but
 * The string "XCP" appeared as a window title after right-clicking on Firefox in
 the start menu to open a new window.

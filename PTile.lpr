@@ -70,8 +70,8 @@ begin
   if LStyle = 0 then
     exit;
 
-  if (LStyle and WS_BORDER) <> WS_BORDER then
-    exit;
+  //if (LStyle and WS_BORDER) <> WS_BORDER then
+  //  exit;
 
   WriteLn(WideCharToString(@Title[0]));
 end;
