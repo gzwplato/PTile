@@ -90,7 +90,10 @@ begin
     @WinEventCallback, 0, 0, WINEVENT_OUTOFCONTEXT);
 
   while GetMessage(Message, 0, 0, 0) do
+  begin
+    TranslateMessage(Message);
     DispatchMessage(Message);
+  end;
 
   if EventHook <> 0 then
     UnhookWinEvent(EventHook);
