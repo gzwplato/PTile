@@ -79,12 +79,22 @@ end;
 var
   {%H-}Message: TMsg;
   {%H-}EventHook: HWINEVENTHOOK;
-  {
   LibHookProc: HINSTANCE;
   InstallHooks: TInstallProcedure;
   UninstallHooks: TUninstallProcedure;
-  }
 begin
+  LibHookProc := LoadLibrary('LibHookProc/LibHookProc.dll');
+  if LibHookProc = 0 then
+    exit;
+
+  InstallHooks := TInstallProcedure(GetProcAddress(LibHookProc, 'InstallHooks'));
+  UninstallHooks := TUninstallProcedure(GetProcAddress(LibHookProc, 'UninstallHooks'));
+
+  InstallHooks;
+  ReadLn;
+  UninstallHooks;
+
+  {
   Message := Default(TMsg);
   EventHook := SetWinEventHook(EVENT_OBJECT_CREATE, EVENT_OBJECT_DESTROY, 0,
     @WinEventCallback, 0, 0, WINEVENT_OUTOFCONTEXT);
@@ -97,18 +107,6 @@ begin
 
   if EventHook <> 0 then
     UnhookWinEvent(EventHook);
-
-  {
-  LibHookProc := LoadLibrary('LibHookProc/LibHookProc.dll');
-  if LibHookProc = 0 then
-    exit;
-
-  InstallHooks := TInstallProcedure(GetProcAddress(LibHookProc, 'InstallHooks'));
-  UninstallHooks := TUninstallProcedure(GetProcAddress(LibHookProc, 'UninstallHooks'));
-
-  InstallHooks;
-  ReadLn;
-  UninstallHooks;
   }
 end.
 

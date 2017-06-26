@@ -17,6 +17,7 @@ type
 var
   HInst: HINSTANCE;
   CBTHook: HHOOK;
+  LogFile: Text;
 
 function CBTCallback(
     NCode: Integer;
@@ -36,11 +37,15 @@ end;
 procedure InstallHooks;
 begin
   CBTHook := SetWindowsHookExW(WH_CBT, @CBTCallback, HInst, 0);
+  Assign(LogFile, 'Log.txt');
+  Rewrite(LogFile);
+  WriteLn(LogFile, '.');
 end;
 
 procedure UninstallHooks;
 begin
   UnhookWindowsHookEx(CBTHook);
+  Close(LogFile);
 end;
 
 function CBTCallback(
@@ -49,7 +54,7 @@ function CBTCallback(
     LParam: LPARAM
 ): LRESULT;
 begin
-  WriteLn('.'); // This may not work.
+  WriteLn(LogFile, '.'); // This may not work.
   CallNextHookEx(CBTHook, NCode, WParam, LParam);
   Result := 0;
 end;
