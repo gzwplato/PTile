@@ -91,7 +91,13 @@ begin
   UninstallHooks := TUninstallProcedure(GetProcAddress(LibHookProc, 'UninstallHooks'));
 
   InstallHooks;
-  ReadLn;
+
+  while GetMessage(Message, 0, 0, 0) do
+  begin
+    TranslateMessage(Message);
+    DispatchMessage(Message);
+  end;
+
   UninstallHooks;
 
   {
