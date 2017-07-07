@@ -55,8 +55,7 @@ function CBTCallback(
 ): LRESULT;
 begin
   WriteLn(LogFile, '.'); // This may not work.
-  CallNextHookEx(CBTHook, NCode, WParam, LParam);
-  Result := 0;
+  Result := CallNextHookEx(CBTHook, NCode, WParam, LParam);
 end;
 
 exports DllMain;
